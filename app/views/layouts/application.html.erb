@@ -4,12 +4,36 @@
     <title>SampleApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <div class="container">
+      <%= link_to "GTM.Y", "/", class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to " Home", homes_top_path, class: 'fas fa-home nav-link text-light'  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to " About", homes_about_path, class: 'fas fa-users nav-link text-light' %>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-3"><%= render 'homes/info' %></div>
+          <div class="col-1"></div>
+          <div class="col-7">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
