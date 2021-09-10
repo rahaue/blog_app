@@ -1,0 +1,17 @@
+<%= form_with model: @post, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field" style="padding-top:40px;">
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "20x10"%>
+    <li class="c-article-step__item">
+  </div>
+<% end %>
+
+<script>
+  new FroalaEditor('#post_content', {});
+</script>
